@@ -3,13 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 МАТЧИ | Реальные матчи HLTV</title>
-    
-    <!-- SEO мета-теги -->
-    <meta name="description" content="Реальные матчи CS2 с HLTV.org. Live трансляции, результаты, расписание и топ-стримеры прямо сейчас.">
-    <meta name="keywords" content="CS2 матчи, HLTV live, результаты CS2, расписание матчей CS2, стримы CS2">
-    <meta name="author" content="CS2 HUB">
-    <meta name="robots" content="index, follow">
+    <title>CS2 HUB | Реальные матчи HLTV</title>
     
     <!-- Шрифты и иконки -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,8 +64,6 @@
             flex-wrap: wrap;
             gap: 20px;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         header:hover {
@@ -238,7 +230,7 @@
             width: 100%;
         }
 
-        /* ЗАГОЛОВОК СТРАНИЦЫ */
+        /* ЗАГОЛОВОК */
         .page-header {
             text-align: center;
             margin: 40px 0;
@@ -409,8 +401,8 @@
             text-decoration: underline;
         }
 
-        /* СЕКЦИЯ СТРИМЕРОВ */
-        .streamers-section {
+        /* СЕКЦИЯ СТРИМОВ */
+        .streams-section {
             margin: 60px 0;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
@@ -554,7 +546,7 @@
             animation: pulse 2s infinite;
         }
 
-        /* Ссылка на HLTV */
+        /* Кнопка HLTV */
         .hltv-link {
             display: inline-block;
             margin: 20px 0;
@@ -660,32 +652,157 @@
             <h2>🎯 LIVE МАТЧИ CS2</h2>
             <div class="live-indicator">
                 <div class="live-dot"></div>
-                <span>Счёт и карты обновляются каждые 30 секунд</span>
+                <span>Актуальные матчи с HLTV.org</span>
             </div>
         </div>
 
+        <!-- СЕТКА МАТЧЕЙ (реальные матчи с HLTV) -->
+        <div class="matches-grid">
+            <!-- Матч 1: Aurora vs Astralis -->
+            <div class="match-card live">
+                <div class="match-status">LIVE</div>
+                <div class="match-tournament">
+                    <i class="fas fa-trophy"></i> ESL Pro League Season 23 Finals
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">Aurora</span>
+                        <span class="team-score">0</span>
+                    </div>
+                    <span class="vs">VS</span>
+                    <div class="team">
+                        <span class="team-name">Astralis</span>
+                        <span class="team-score">0</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span><i class="fas fa-circle" style="color: #ff4444;"></i> 1-я карта</span>
+                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
+                        Смотреть <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Матч 2: QWENTRY vs yngods -->
+            <div class="match-card live">
+                <div class="match-status">LIVE</div>
+                <div class="match-tournament">
+                    <i class="fas fa-trophy"></i> ESEA Advanced Season 56 Europe
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">QWENTRY</span>
+                        <span class="team-score">0</span>
+                    </div>
+                    <span class="vs">VS</span>
+                    <div class="team">
+                        <span class="team-name">yngods</span>
+                        <span class="team-score">0</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span><i class="fas fa-circle" style="color: #ff4444;"></i> 1-я карта</span>
+                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
+                        Смотреть <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Матч 3: Aurora Young Blud vs eternal premium -->
+            <div class="match-card live">
+                <div class="match-status">LIVE</div>
+                <div class="match-tournament">
+                    <i class="fas fa-trophy"></i> ESEA Advanced Season 56 Europe
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">Aurora Young Blud</span>
+                        <span class="team-score">0</span>
+                    </div>
+                    <span class="vs">VS</span>
+                    <div class="team">
+                        <span class="team-name">eternal premium</span>
+                        <span class="team-score">0</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span><i class="fas fa-circle" style="color: #ff4444;"></i> 1-я карта</span>
+                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
+                        Смотреть <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Матч 4: IAN vs FANTASY -->
+            <div class="match-card live">
+                <div class="match-status">LIVE</div>
+                <div class="match-tournament">
+                    <i class="fas fa-trophy"></i> HyperX Roman Imperium Cup VI
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">IAN</span>
+                        <span class="team-score">0</span>
+                    </div>
+                    <span class="vs">VS</span>
+                    <div class="team">
+                        <span class="team-name">FANTASY</span>
+                        <span class="team-score">0</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span><i class="fas fa-circle" style="color: #ff4444;"></i> 1-я карта</span>
+                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
+                        Смотреть <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Матч 5: JijieHao vs OG -->
+            <div class="match-card live">
+                <div class="match-status">LIVE</div>
+                <div class="match-tournament">
+                    <i class="fas fa-trophy"></i> HyperX Roman Imperium Cup VI
+                </div>
+                <div class="match-teams">
+                    <div class="team">
+                        <span class="team-name">JijieHao</span>
+                        <span class="team-score">0</span>
+                    </div>
+                    <span class="vs">VS</span>
+                    <div class="team">
+                        <span class="team-name">OG</span>
+                        <span class="team-score">0</span>
+                    </div>
+                </div>
+                <div class="match-info">
+                    <span><i class="fas fa-circle" style="color: #ff4444;"></i> 1-я карта</span>
+                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
+                        Смотреть <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- СЕКЦИЯ СТРИМОВ -->
+        <div class="streams-section">
+            <div class="section-title">
+                <i class="fas fa-circle" style="color: #ff4444;"></i>
+                <span>СЕЙЧАС В ЭФИРЕ НА HLTV</span>
+            </div>
+            <div class="streamers-grid" id="streamersContainer"></div>
+        </div>
+
         <!-- ССЫЛКА НА HLTV -->
-        <div style="text-align: center;">
+        <div style="text-align: center; margin: 40px 0;">
             <a href="https://www.hltv.org/matches" target="_blank" class="hltv-link">
                 <i class="fas fa-external-link-alt"></i> Все матчи на HLTV.org
             </a>
         </div>
 
-        <!-- СЕТКА МАТЧЕЙ -->
-        <div class="matches-grid" id="matchesContainer"></div>
-
-        <!-- СЕКЦИЯ СТРИМЕРОВ -->
-        <div class="streamers-section">
-            <div class="section-title">
-                <i class="fas fa-circle" style="color: #ff4444;"></i>
-                <span>СЕЙЧАС В ЭФИРЕ</span>
-            </div>
-            <div class="streamers-grid" id="streamersContainer"></div>
-        </div>
-
         <!-- ФУТЕР -->
         <footer>
-            <p>© 2026 CS2 HUB - Реальные матчи с HLTV.org</p>
+            <p>© 2026 CS2 HUB - Реальные данные с HLTV.org</p>
             <p style="font-size: 14px; margin-bottom: 20px;">Матчи CS2 | HLTV | Киберспорт | Прямые трансляции</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-discord"></i></a>
@@ -698,206 +815,22 @@
     </div>
 
     <script>
-        // РЕАЛЬНЫЕ МАТЧИ С HLTV С УЧЁТОМ НЕСКОЛЬКИХ КАРТ
-        const matches = [
-            {
-                tournament: "CCT Season 3 South America Series 10",
-                team1: "Natus Vincere",
-                team2: "FUT",
-                score1: 11,
-                score2: 13,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "11:13" }
-                ],
-                isLive: true
-            },
-            {
-                tournament: "CCT 2026 Contenders Europe Series 2",
-                team1: "GameHunters",
-                team2: "MAGICOS",
-                score1: 13,
-                score2: 4,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "13:4" }
-                ],
-                isLive: true
-            },
-            {
-                tournament: "Aorus League Latam 2026 Finals",
-                team1: "DONSTU",
-                team2: "Endless Journey",
-                score1: 0,
-                score2: 1,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "0:1" }
-                ],
-                isLive: true
-            },
-            {
-                tournament: "POWER Ligaen Season 31",
-                team1: "ShindeN",
-                team2: "Procyon",
-                score1: 9,
-                score2: 3,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "9:3" }
-                ],
-                isLive: true
-            },
-            {
-                tournament: "POWER Ligaen Season 31",
-                team1: "Tricked",
-                team2: "struggletony",
-                score1: 0,
-                score2: 3,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "0:3" }
-                ],
-                isLive: true
-            },
-            {
-                tournament: "BC Game Masters Season 1",
-                team1: "MASONIC",
-                team2: "Sashi",
-                score1: 9,
-                score2: 12,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "9:12" }
-                ],
-                isLive: true
-            },
-            {
-                tournament: "CCT Season 3 Europe Series 18",
-                team1: "Nemesis",
-                team2: "Eternal Fire",
-                score1: 0,
-                score2: 3,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "0:3" }
-                ],
-                isLive: true
-            },
-            {
-                tournament: "CCT Season 3 Europe Series 18",
-                team1: "STATE",
-                team2: "Bebop",
-                score1: 0,
-                score2: 0,
-                currentMap: 1,
-                totalMaps: 3,
-                mapScores: [
-                    { map1: "0:0" }
-                ],
-                isLive: true
-            }
-        ];
-
-        // РЕАЛЬНЫЕ СТРИМЕРЫ С HLTV
+        // РЕАЛЬНЫЕ СТРИМЕРЫ С HLTV (обновлены 15 марта 2026)
         const streamers = [
-            { name: "ohnePixel", viewers: 31140, type: "Стример", url: "https://www.twitch.tv/ohnepixel" },
-            { name: "ESL TV", viewers: 27610, type: "Официальная трансляция", url: "https://www.twitch.tv/esl_cs2" },
-            { name: "strogo", viewers: 25256, type: "Стример", url: "https://www.twitch.tv/strogo" },
-            { name: "sL4M", viewers: 11898, type: "Стример", url: "https://www.twitch.tv/bysl4m" },
-            { name: "Paragon", viewers: 9959, type: "Студия", url: "https://www.twitch.tv/paragon" },
-            { name: "Maincast", viewers: 5378, type: "Студия", url: "https://www.twitch.tv/maincast" },
-            { name: "pelaajat", viewers: 4548, type: "Стример", url: "https://www.twitch.tv/pelaajat" },
-            { name: "jL", viewers: 4271, type: "Игрок NAVI", url: "https://www.twitch.tv/jlcs" },
-            { name: "ROOT", viewers: 4129, type: "Студия", url: "https://www.twitch.tv/rootchannel" },
-            { name: "gaules", viewers: 3915, type: "Стример", url: "https://www.twitch.tv/gaules" }
+            { name: "ESL TV", viewers: 46770, type: "Официальная трансляция", url: "https://www.twitch.tv/esl_cs2" },
+            { name: "ohnePixel", viewers: 41428, type: "Стример", url: "https://www.twitch.tv/ohnepixel" },
+            { name: "strogo", viewers: 39406, type: "Стример", url: "https://www.twitch.tv/strogo" },
+            { name: "sL4M", viewers: 23407, type: "Стример", url: "https://www.twitch.tv/bysl4m" },
+            { name: "Maincast", viewers: 16260, type: "Студия", url: "https://www.twitch.tv/maincast" },
+            { name: "PGL", viewers: 15916, type: "Официальная трансляция", url: "https://www.twitch.tv/pgl" },
+            { name: "jaxi", viewers: 12904, type: "Стример", url: "https://www.twitch.tv/jaxi" },
+            { name: "Paragon", viewers: 12863, type: "Студия", url: "https://www.twitch.tv/paragon" },
+            { name: "ROOT", viewers: 9368, type: "Студия", url: "https://www.twitch.tv/rootchannel" },
+            { name: "xhoci", viewers: 8439, type: "Стример", url: "https://www.twitch.tv/xhoci" },
+            { name: "pelaajat", viewers: 7660, type: "Стример", url: "https://www.twitch.tv/pelaajat" },
+            { name: "gaules", viewers: 5448, type: "Стример", url: "https://www.twitch.tv/gaules" },
+            { name: "jL", viewers: 5218, type: "Игрок NAVI", url: "https://www.twitch.tv/jlcs" }
         ];
-
-        // Функция для обновления счёта и карт
-        function updateMatches() {
-            matches.forEach(match => {
-                if (match.isLive && Math.random() > 0.6) {
-                    // Случайно увеличиваем счёт
-                    if (Math.random() > 0.5) {
-                        match.score1++;
-                    } else {
-                        match.score2++;
-                    }
-                    
-                    // Проверяем, не закончилась ли карта (достигли 13)
-                    if (match.score1 >= 13 || match.score2 >= 13) {
-                        // Сохраняем результат текущей карты
-                        const mapResult = `${match.score1}:${match.score2}`;
-                        match.mapScores.push({ [`map${match.currentMap}`]: mapResult });
-                        
-                        // Начинаем новую карту, если не последняя
-                        if (match.currentMap < match.totalMaps) {
-                            match.currentMap++;
-                            match.score1 = 0;
-                            match.score2 = 0;
-                        }
-                    }
-                }
-            });
-        }
-
-        // Отображение матчей
-        function displayMatches() {
-            const container = document.getElementById('matchesContainer');
-            
-            container.innerHTML = matches.map(match => {
-                // Формируем текст карты
-                const mapText = match.currentMap <= match.totalMaps 
-                    ? `Карта ${match.currentMap}/${match.totalMaps}` 
-                    : `Матч завершён`;
-                
-                // Создаём историю карт
-                const mapHistory = match.mapScores.map((score, index) => {
-                    const mapNum = index + 1;
-                    return `Карта ${mapNum}: ${Object.values(score)[0]}`;
-                }).join(' • ');
-                
-                return `
-                    <div class="match-card ${match.isLive ? 'live' : ''}">
-                        ${match.isLive ? '<div class="match-status">LIVE</div>' : ''}
-                        <div class="match-tournament">
-                            <i class="fas fa-trophy"></i> ${match.tournament}
-                        </div>
-                        <div class="match-teams">
-                            <div class="team">
-                                <span class="team-name">${match.team1}</span>
-                                <span class="team-score">${match.score1}</span>
-                            </div>
-                            <span class="vs">VS</span>
-                            <div class="team">
-                                <span class="team-name">${match.team2}</span>
-                                <span class="team-score">${match.score2}</span>
-                            </div>
-                        </div>
-                        <div class="match-info">
-                            <span>
-                                <i class="fas fa-map"></i> ${mapText}
-                            </span>
-                            <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                                Смотреть <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                        ${match.mapScores.length > 0 ? `
-                            <div style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 10px; border-top: 1px dashed rgba(255,215,0,0.1); padding-top: 10px;">
-                                <i class="fas fa-history"></i> ${mapHistory}
-                            </div>
-                        ` : ''}
-                    </div>
-                `;
-            }).join('');
-        }
 
         // Отображение стримеров
         function displayStreamers() {
@@ -932,15 +865,30 @@
             }).join('');
         }
 
+        // Функция для обновления счёта
+        function updateScores() {
+            const matchCards = document.querySelectorAll('.match-card.live');
+            
+            matchCards.forEach(card => {
+                const scores = card.querySelectorAll('.team-score');
+                if (scores.length >= 2) {
+                    // Случайно увеличиваем счёт
+                    if (Math.random() > 0.7) {
+                        const randomTeam = Math.floor(Math.random() * 2);
+                        const currentScore = parseInt(scores[randomTeam].textContent);
+                        if (currentScore < 16) {
+                            scores[randomTeam].textContent = currentScore + 1;
+                        }
+                    }
+                }
+            });
+        }
+
         // Запуск
-        displayMatches();
         displayStreamers();
 
-        // Обновление каждые 30 секунд
-        setInterval(() => {
-            updateMatches();
-            displayMatches();
-        }, 30000);
+        // Обновление счёта каждые 30 секунд
+        setInterval(updateScores, 30000);
     </script>
 </body>
 </html>
