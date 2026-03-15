@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 МАТЧИ | Live матчи HLTV</title>
+    <title>CS2 МАТЧИ | Прямо сейчас на HLTV</title>
     
     <!-- ИКОНКА САЙТА (ФАВИКОН) ИЗ ЛОГОТИПА H2 -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='url(%23grad)'/><text x='50' y='70' font-size='50' text-anchor='middle' fill='%230a0c0f' font-weight='900'>H2</text><defs><linearGradient id='grad'><stop offset='0%25' stop-color='%23ffd700'/><stop offset='100%25' stop-color='%23ff8c00'/></linearGradient></defs></svg>">
@@ -273,148 +273,164 @@
             animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        .matches-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            gap: 25px;
+        .info-message {
+            text-align: center;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 30px;
+            border: 1px dashed rgba(255, 215, 0, 0.3);
             margin: 40px 0;
         }
 
-        .match-card {
+        .info-message i {
+            font-size: 64px;
+            color: #ffd700;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .info-message h3 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .info-message p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .streams-section {
+            margin: 50px 0;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-        .match-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+        .section-title {
+            font-size: 32px;
+            margin: 20px 0 30px;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 10px;
+        }
+
+        .section-title i {
+            font-size: 28px;
+        }
+
+        .streamers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .streamer-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .streamer-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #ffd700;
+            transform: translateX(5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .streamer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .streamer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .streamer-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0a0c0f;
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+
+        .streamer-card:hover .streamer-avatar {
+            transform: scale(1.1);
+        }
+
+        .streamer-details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .streamer-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .streamer-name i {
+            color: #ffd700;
+            font-size: 14px;
             opacity: 0;
-            transition: opacity 0.6s;
-            pointer-events: none;
+            transition: opacity 0.3s;
         }
 
-        .match-card:hover::before {
+        .streamer-card:hover .streamer-name i {
             opacity: 1;
         }
 
-        .match-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .match-card.live {
-            border-left: 4px solid #ff4444;
-            background: rgba(255, 68, 68, 0.05);
-        }
-
-        .match-card.live .match-status {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #ff4444;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
+        .streamer-viewers {
+            background: rgba(255, 215, 0, 0.15);
+            color: #ffd700;
+            padding: 6px 12px;
+            border-radius: 30px;
             font-weight: 700;
-            animation: pulse 2s infinite;
-        }
-
-        .match-tournament {
-            color: #ffd700;
             font-size: 14px;
-            margin-bottom: 15px;
-            padding-right: 60px;
-            font-weight: 500;
-        }
-
-        .match-teams {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 20px 0;
-        }
-
-        .team {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            width: 40%;
-        }
-
-        .team-name {
-            font-size: 18px;
-            font-weight: 700;
-            text-align: center;
-            color: #fff;
-        }
-
-        .team-score {
-            font-size: 32px;
-            font-weight: 800;
-            color: #ffd700;
-        }
-
-        .vs {
-            color: rgba(255, 255, 255, 0.3);
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .match-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
-            padding-top: 15px;
-        }
-
-        .match-info i {
-            color: #ffd700;
-            margin-right: 5px;
-        }
-
-        .match-link {
-            color: #ffd700;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s;
-            display: inline-flex;
             align-items: center;
             gap: 5px;
         }
 
-        .match-link:hover {
-            gap: 10px;
-            text-decoration: underline;
+        .streamer-viewers i {
+            font-size: 12px;
+            color: #ff4444;
+            animation: pulse 2s infinite;
         }
 
         .hltv-button {
             display: inline-block;
-            margin: 20px 0;
+            margin: 30px 0;
             background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
             color: #0a0c0f;
             padding: 15px 40px;
@@ -476,6 +492,14 @@
             .page-header h2 {
                 font-size: 36px;
             }
+            .streamer-content {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            .streamer-viewers {
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
@@ -502,174 +526,38 @@
 
         <div class="page-header">
             <h2>🎯 LIVE МАТЧИ CS2</h2>
+            <p>Прямо сейчас на HLTV.org</p>
             <div class="live-indicator">
                 <div class="live-dot"></div>
-                <span>Прямо сейчас на HLTV.org</span>
+                <span>Обновлено: 15 марта 2026</span>
             </div>
         </div>
 
-        <!-- СЕТКА МАТЧЕЙ -->
-        <div class="matches-grid">
-            <!-- Матч 1: ESL Pro League S23 -->
-            <div class="match-card live">
-                <div class="match-status">LIVE</div>
-                <div class="match-tournament">
-                    <i class="fas fa-trophy"></i> ESL Pro League Season 23 Finals
-                </div>
-                <div class="match-teams">
-                    <div class="team">
-                        <span class="team-name">Aurora</span>
-                        <span class="team-score">5</span>
-                    </div>
-                    <span class="vs">VS</span>
-                    <div class="team">
-                        <span class="team-name">Astralis</span>
-                        <span class="team-score">2</span>
-                    </div>
-                </div>
-                <div class="match-info">
-                    <span><i class="fas fa-map"></i> Карта 1</span>
-                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                        Смотреть на HLTV <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
+        <!-- ЧЕСТНОЕ СООБЩЕНИЕ ОБ ОТСУТСТВИИ МАТЧЕЙ -->
+        <div class="info-message">
+            <i class="fas fa-info-circle"></i>
+            <h3>На данный момент нет live матчей</h3>
+            <p>Согласно данным HLTV.org, сейчас не проводится ни одного live матча. Есть только трансляции стримеров.</p>
+        </div>
 
-            <!-- Матч 2: HyperX Roman Imperium Cup VI -->
-            <div class="match-card live">
-                <div class="match-status">LIVE</div>
-                <div class="match-tournament">
-                    <i class="fas fa-trophy"></i> HyperX Roman Imperium Cup VI
-                </div>
-                <div class="match-teams">
-                    <div class="team">
-                        <span class="team-name">9INE</span>
-                        <span class="team-score">17</span>
-                    </div>
-                    <span class="vs">VS</span>
-                    <div class="team">
-                        <span class="team-name">Alliance</span>
-                        <span class="team-score">15</span>
-                    </div>
-                </div>
-                <div class="match-info">
-                    <span><i class="fas fa-map"></i> Карта 1</span>
-                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                        Смотреть на HLTV <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
+        <!-- РЕАЛЬНЫЕ СТРИМЫ С HLTV -->
+        <div class="streams-section">
+            <div class="section-title">
+                <i class="fas fa-circle" style="color: #ff4444;"></i>
+                <span>СЕЙЧАС В ЭФИРЕ НА HLTV</span>
             </div>
-
-            <!-- Матч 3: CCT Season 3 South America -->
-            <div class="match-card live">
-                <div class="match-status">LIVE</div>
-                <div class="match-tournament">
-                    <i class="fas fa-trophy"></i> CCT Season 3 South America Series 10
-                </div>
-                <div class="match-teams">
-                    <div class="team">
-                        <span class="team-name">UNO MILLE</span>
-                        <span class="team-score">9</span>
-                    </div>
-                    <span class="vs">VS</span>
-                    <div class="team">
-                        <span class="team-name">MIBR Academy</span>
-                        <span class="team-score">9</span>
-                    </div>
-                </div>
-                <div class="match-info">
-                    <span><i class="fas fa-map"></i> Карта 1</span>
-                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                        Смотреть на HLTV <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Матч 4: CCT 2026 Contenders Europe -->
-            <div class="match-card live">
-                <div class="match-status">LIVE</div>
-                <div class="match-tournament">
-                    <i class="fas fa-trophy"></i> CCT 2026 Contenders Europe Series 2
-                </div>
-                <div class="match-teams">
-                    <div class="team">
-                        <span class="team-name">Misa</span>
-                        <span class="team-score">6</span>
-                    </div>
-                    <span class="vs">VS</span>
-                    <div class="team">
-                        <span class="team-name">Young Ninjas</span>
-                        <span class="team-score">7</span>
-                    </div>
-                </div>
-                <div class="match-info">
-                    <span><i class="fas fa-map"></i> Карта 1</span>
-                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                        Смотреть на HLTV <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Матч 5: Aorus League Latam 2026 -->
-            <div class="match-card live">
-                <div class="match-status">LIVE</div>
-                <div class="match-tournament">
-                    <i class="fas fa-trophy"></i> Aorus League Latam 2026 Finals
-                </div>
-                <div class="match-teams">
-                    <div class="team">
-                        <span class="team-name">Isurus</span>
-                        <span class="team-score">15</span>
-                    </div>
-                    <span class="vs">VS</span>
-                    <div class="team">
-                        <span class="team-name">R2</span>
-                        <span class="team-score">14</span>
-                    </div>
-                </div>
-                <div class="match-info">
-                    <span><i class="fas fa-map"></i> Карта 1</span>
-                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                        Смотреть на HLTV <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Матч 6: ESEA Advanced Season 56 -->
-            <div class="match-card live">
-                <div class="match-status">LIVE</div>
-                <div class="match-tournament">
-                    <i class="fas fa-trophy"></i> ESEA Advanced Season 56 Europe
-                </div>
-                <div class="match-teams">
-                    <div class="team">
-                        <span class="team-name">QWENTRY</span>
-                        <span class="team-score">10</span>
-                    </div>
-                    <span class="vs">VS</span>
-                    <div class="team">
-                        <span class="team-name">yngods</span>
-                        <span class="team-score">13</span>
-                    </div>
-                </div>
-                <div class="match-info">
-                    <span><i class="fas fa-map"></i> Карта 1</span>
-                    <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                        Смотреть на HLTV <i class="fas fa-external-link-alt"></i>
-                    </a>
-                </div>
-            </div>
+            <div class="streamers-grid" id="streamersContainer"></div>
         </div>
 
         <!-- ССЫЛКА НА HLTV -->
-        <div style="text-align: center; margin: 20px 0 40px;">
+        <div style="text-align: center;">
             <a href="https://www.hltv.org/matches" target="_blank" class="hltv-button">
-                <i class="fas fa-external-link-alt"></i> Все матчи на HLTV.org
+                <i class="fas fa-external-link-alt"></i> Перейти на HLTV.org
             </a>
         </div>
 
         <footer>
-            <p>© 2026 CS2 HUB - Реальные матчи с HLTV.org</p>
+            <p>© 2026 CS2 HUB - Только реальные данные с HLTV.org</p>
             <div class="social-links">
                 <a href="#"><i class="fab fa-discord"></i></a>
                 <a href="#"><i class="fab fa-telegram"></i></a>
@@ -681,27 +569,60 @@
     </div>
 
     <script>
-        // Функция для обновления счёта (имитация live)
-        function updateScores() {
-            const matches = document.querySelectorAll('.match-card.live');
+        // РЕАЛЬНЫЕ ДАННЫЕ СТРИМЕРОВ С HLTV (на основе вашей ссылки)
+        const streamers = [
+            { name: "m3wsu", viewers: 3917, url: "https://www.twitch.tv/m3wsu" },
+            { name: "PGL", viewers: 1945, url: "https://www.twitch.tv/pgl" },
+            { name: "dfragtv", viewers: 1829, url: "https://www.twitch.tv/dfragtv" },
+            { name: "QRUSH", viewers: 1577, url: "https://www.twitch.tv/qrush" },
+            { name: "Stewie2k", viewers: 1251, url: "https://www.twitch.tv/stewie2k" },
+            { name: "kelieN", viewers: 1101, url: "https://www.twitch.tv/kelien" },
+            { name: "anastaze", viewers: 1021, url: "https://www.twitch.tv/anastaze" },
+            { name: "SBolt", viewers: 723, url: "https://www.twitch.tv/sbolt" },
+            { name: "ESL TV", viewers: 651, url: "https://www.twitch.tv/esl_cs2" },
+            { name: "almazer", viewers: 553, url: "https://www.twitch.tv/almazer" },
+            { name: "Croissant Strike", viewers: 347, url: "https://www.twitch.tv/croissantstrike" },
+            { name: "muR", viewers: 297, url: "https://www.twitch.tv/mur" },
+            { name: "Maincast", viewers: 295, url: "https://www.twitch.tv/maincast" },
+            { name: "interz", viewers: 274, url: "https://www.twitch.tv/interz" },
+            { name: "cogu", viewers: 215, url: "https://www.twitch.tv/cogu" },
+            { name: "friend44444", viewers: 188, url: "https://www.twitch.tv/friend44444" },
+            { name: "Laski", viewers: 113, url: "https://www.twitch.tv/laski" },
+            { name: "aunni", viewers: 104, url: "https://www.twitch.tv/aunni" },
+            { name: "KOKONISTER", viewers: 60, url: "https://www.twitch.tv/kokonister" },
+            { name: "UESF", viewers: 37, url: "https://www.twitch.tv/uesf" },
+            { name: "MySkill", viewers: 18, url: "https://www.twitch.tv/myskill" }
+        ];
+
+        function displayStreamers() {
+            const container = document.getElementById('streamersContainer');
             
-            matches.forEach(match => {
-                const scores = match.querySelectorAll('.team-score');
-                if (scores.length >= 2) {
-                    // Случайно увеличиваем счёт (для демонстрации live)
-                    if (Math.random() > 0.7) {
-                        const randomTeam = Math.floor(Math.random() * 2);
-                        const currentScore = parseInt(scores[randomTeam].textContent);
-                        if (currentScore < 16) {
-                            scores[randomTeam].textContent = currentScore + 1;
-                        }
-                    }
-                }
-            });
+            container.innerHTML = streamers.map(streamer => {
+                const initials = streamer.name.substring(0, 2).toUpperCase();
+                
+                return `
+                    <a href="${streamer.url}" target="_blank" class="streamer-card">
+                        <div class="streamer-content">
+                            <div class="streamer-info">
+                                <div class="streamer-avatar">${initials}</div>
+                                <div class="streamer-details">
+                                    <div class="streamer-name">
+                                        ${streamer.name}
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="streamer-viewers">
+                                <i class="fas fa-circle"></i>
+                                <span>${streamer.viewers.toLocaleString()} зрителей</span>
+                            </div>
+                        </div>
+                    </a>
+                `;
+            }).join('');
         }
 
-        // Запускаем обновление каждые 15 секунд
-        setInterval(updateScores, 15000);
+        displayStreamers();
     </script>
 </body>
 </html>
