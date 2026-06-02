@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS2 МАТЧИ | Реальные матчи с CyberScore</title>
+    <title>CS2 МАТЧИ | Расписание IEM Cologne 2026</title>
     
-    <!-- ВАША УНИКАЛЬНАЯ ИКОНКА -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='url(%23grad)'/><text x='50' y='70' font-size='50' text-anchor='middle' fill='%230a0c0f' font-weight='900'>H2</text><defs><linearGradient id='grad'><stop offset='0%25' stop-color='%23ffd700'/><stop offset='100%25' stop-color='%23ff8c00'/></linearGradient></defs></svg>">
     
-    <!-- Шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -47,7 +45,6 @@
             padding: 20px;
         }
 
-        /* ВАША ШАПКА С АНИМИРОВАННЫМ ЛОГОТИПОМ */
         header {
             background: rgba(10, 12, 15, 0.8);
             backdrop-filter: blur(20px);
@@ -67,20 +64,20 @@
         header:hover {
             transform: translateY(-5px);
             border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
             gap: 15px;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .custom-logo {
             width: 60px;
             height: 60px;
             position: relative;
-            margin-right: 5px;
         }
 
         .logo-circle {
@@ -107,43 +104,11 @@
             font-size: 28px;
             font-weight: 900;
             letter-spacing: -2px;
-            z-index: 2;
         }
 
         .logo-highlight {
             color: #fff;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .crosshair {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-        }
-
-        .crosshair::before,
-        .crosshair::after {
-            content: '';
-            position: absolute;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .crosshair::before {
-            width: 2px;
-            height: 20px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .crosshair::after {
-            width: 20px;
-            height: 2px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         .logo-ring {
@@ -172,7 +137,6 @@
             -webkit-text-fill-color: transparent;
             background-size: 200% auto;
             animation: shine 3s linear infinite;
-            letter-spacing: 2px;
         }
 
         @keyframes shine {
@@ -183,7 +147,6 @@
             display: flex;
             gap: 30px;
             flex-wrap: wrap;
-            align-items: center;
         }
 
         nav a {
@@ -191,7 +154,6 @@
             color: #fff;
             font-weight: 500;
             transition: all 0.3s;
-            font-size: 16px;
             opacity: 0.7;
             position: relative;
             padding: 5px 0;
@@ -242,24 +204,6 @@
             margin-bottom: 10px;
         }
 
-        .page-header p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 16px;
-        }
-
-        .api-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(46, 204, 113, 0.1);
-            padding: 8px 20px;
-            border-radius: 50px;
-            margin-top: 15px;
-            border: 1px solid #2ecc71;
-            color: #2ecc71;
-            font-size: 14px;
-        }
-
         .matches-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -273,33 +217,14 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 25px;
             padding: 25px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s;
             position: relative;
             overflow: hidden;
         }
 
         .match-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-5px);
             border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .match-card.live {
-            border-left: 4px solid #ff4444;
-            background: rgba(255, 68, 68, 0.05);
-        }
-
-        .match-status {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #ff4444;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            animation: pulse 1.5s infinite;
         }
 
         .match-tournament {
@@ -329,13 +254,6 @@
             font-size: 18px;
             font-weight: 700;
             text-align: center;
-            color: #fff;
-        }
-
-        .team-score {
-            font-size: 32px;
-            font-weight: 800;
-            color: #ffd700;
         }
 
         .vs {
@@ -364,65 +282,103 @@
             color: #ffd700;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
             transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
         }
 
         .match-link:hover {
-            gap: 10px;
             text-decoration: underline;
         }
 
-        .loading {
-            text-align: center;
-            padding: 60px;
-            grid-column: 1 / -1;
+        .tournaments-section {
+            margin: 60px 0 40px;
         }
 
-        .loading i {
-            font-size: 48px;
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .tournaments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .tournament-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            border-radius: 20px;
+            padding: 20px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .tournament-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 215, 0, 0.4);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .tournament-name {
+            font-size: 20px;
+            font-weight: 700;
             color: #ffd700;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
 
-        .no-matches {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 60px;
-            background: rgba(255, 255, 255, 0.02);
+        .tournament-dates {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 8px;
+        }
+
+        .tournament-prize {
+            font-size: 13px;
+            color: #ff8c00;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .tournament-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            padding: 6px 16px;
             border-radius: 30px;
-            border: 1px dashed rgba(255, 215, 0, 0.3);
+            transition: all 0.3s;
+            display: inline-block;
         }
 
-        .no-matches i {
-            font-size: 48px;
-            color: #ffd700;
-            margin-bottom: 20px;
-            opacity: 0.5;
+        .tournament-link:hover {
+            background: rgba(255, 215, 0, 0.2);
+            border-color: #ffd700;
         }
 
         footer {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 30px;
             padding: 40px;
             margin-top: 50px;
             text-align: center;
         }
 
-        footer p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-        }
-
         .social-links {
             display: flex;
             gap: 25px;
             justify-content: center;
+            margin-top: 20px;
         }
 
         .social-links a {
@@ -441,162 +397,116 @@
                 flex-direction: column;
                 text-align: center;
             }
-            nav {
-                justify-content: center;
-            }
             .page-header h2 {
-                font-size: 36px;
+                font-size: 32px;
+            }
+            .section-title {
+                font-size: 24px;
             }
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
-        <!-- ВАША ШАПКА -->
         <header>
-            <div class="logo-container">
+            <a href="https://hpr204.github.io/cs2/" class="logo-container">
                 <div class="custom-logo">
                     <div class="logo-circle">
                         <span class="logo-text">H<span class="logo-highlight">2</span></span>
-                        <div class="crosshair"></div>
                     </div>
                     <div class="logo-ring"></div>
                 </div>
                 <h1>CS2 HUB</h1>
-            </div>
+            </a>
             <nav>
                 <a href="https://hpr204.github.io/cs2/">Главная</a>
                 <a href="https://hpr204.github.io/cs2newsw/">Новости</a>
                 <a href="https://hpr204.github.io/Gaidivcs2/">Гайды</a>
                 <a href="https://hpr204.github.io/top10/">Топ-10</a>
+                <a href="schedule.html" class="active">Матчи</a>
             </nav>
         </header>
 
-        <!-- ЗАГОЛОВОК -->
         <div class="page-header">
-            <h2>🎯 LIVE МАТЧИ CS2</h2>
-            <div class="api-badge">
-                <i class="fas fa-database"></i>
-                <span>Данные с CyberScore (обновление каждые 30 сек)</span>
+            <h2>РАСПИСАНИЕ МАТЧЕЙ CS2</h2>
+        </div>
+
+        <div id="matchesContainer" class="matches-grid"></div>
+
+        <div class="tournaments-section">
+            <div class="section-title">
+                <i class="fas fa-globe-americas"></i>
+                ОСТАВШИЕСЯ ТУРНИРЫ TIER-1 2026
+                <i class="fas fa-trophy"></i>
             </div>
+            <div class="tournaments-grid" id="tournamentsContainer"></div>
         </div>
 
-        <!-- КОНТЕЙНЕР ДЛЯ МАТЧЕЙ -->
-        <div id="matchesContainer" class="matches-grid">
-            <div class="loading">
-                <i class="fas fa-spinner fa-spin"></i>
-                <p>Загрузка реальных матчей...</p>
-            </div>
-        </div>
-
-        <!-- ССЫЛКА НА HLTV (на всякий случай) -->
-        <div style="text-align: center; margin: 20px 0;">
-            <a href="https://www.hltv.org/matches" target="_blank" style="color: #ffd700; text-decoration: none;">
-                <i class="fas fa-external-link-alt"></i> Все матчи на HLTV.org
-            </a>
-        </div>
-
-        <!-- ФУТЕР -->
         <footer>
-            <p>© 2026 CS2 HUB - Реальные данные с CyberScore</p>
+            <p>© 2026 CS2 HUB • Расписание IEM Cologne Major 2026 (источник: HLTV.org)</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-discord"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-twitch"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-steam"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitch"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-steam"></i></a>
             </div>
         </footer>
     </div>
 
     <script>
-        async function loadMatches() {
+        const realMatches = [
+            { team1: "M80", team2: "Lynn Vision Gaming", time: "13:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" },
+            { team1: "SINNERS", team2: "FlyQuest", time: "13:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" },
+            { team1: "B8", team2: "TYLOO", time: "14:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" },
+            { team1: "MIBR", team2: "THUNDER dOWNUNDER", time: "14:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" },
+            { team1: "GamerLegion", team2: "NRG", time: "15:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" },
+            { team1: "HEROIC", team2: "Sharks Esports", time: "15:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" },
+            { team1: "BetBoom Team", team2: "Gaimin Gladiators", time: "16:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" },
+            { team1: "BIG", team2: "Team Liquid", time: "16:30 CET", tournament: "IEM Cologne Major 2026 • Stage 1 (Открытие)" }
+        ];
+
+        const tier1Tournaments = [
+            { name: "ESL Pro League Season 21", dates: "8 июня – 28 июня 2026", prize: "$850,000", location: "Мальта", link: "https://www.hltv.org/events/7606/esl-pro-league-season-21" },
+            { name: "BLAST Premier Fall Groups 2026", dates: "15 июля – 1 августа 2026", prize: "$190,000", location: "Копенгаген / онлайн", link: "https://www.hltv.org/events/7610/blast-premier-fall-groups-2026" },
+            { name: "IEM Rio 2026", dates: "12–20 сентября 2026", prize: "$250,000", location: "Рио-де-Жанейро, Бразилия", link: "https://www.hltv.org/events/7612/iem-rio-2026" },
+            { name: "ESL Pro League Season 22", dates: "1–21 октября 2026", prize: "$850,000", location: "Мальта", link: "https://www.hltv.org/events/7614/esl-pro-league-season-22" },
+            { name: "BLAST Premier World Final 2026", dates: "5–9 ноября 2026", prize: "$1,000,000", location: "Абу-Даби, ОАЭ", link: "https://www.hltv.org/events/7616/blast-premier-world-final-2026" },
+            { name: "IEM Katowice 2027", dates: "Январь 2027 (квалификации с декабря)", prize: "$1,000,000", location: "Катовице, Польша", link: "https://www.hltv.org/events/7618/iem-katowice-2027" }
+        ];
+
+        function renderMatches() {
             const container = document.getElementById('matchesContainer');
-            
-            try {
-                // CyberScore API - не требует ключа
-                const response = await fetch('https://api.cyberscore.live/api/v1/csgo/matches');
-                const data = await response.json();
-                
-                if (!data || data.length === 0) {
-                    container.innerHTML = `
-                        <div class="no-matches">
-                            <i class="fas fa-info-circle"></i>
-                            <h3>Нет live матчей</h3>
-                            <p>На данный момент нет активных матчей</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                // Фильтруем только live матчи
-                const liveMatches = data.filter(match => 
-                    match.status === 'live' || match.status === 'running'
-                );
-
-                if (liveMatches.length === 0) {
-                    container.innerHTML = `
-                        <div class="no-matches">
-                            <i class="fas fa-info-circle"></i>
-                            <h3>Нет live матчей</h3>
-                            <p>На данный момент нет активных матчей</p>
-                        </div>
-                    `;
-                    return;
-                }
-
-                // Показываем матчи
-                container.innerHTML = liveMatches.map(match => {
-                    const team1 = match.team1?.name || 'TBD';
-                    const team2 = match.team2?.name || 'TBD';
-                    const score1 = match.score1 || 0;
-                    const score2 = match.score2 || 0;
-                    const tournament = match.tournament?.name || match.league?.name || 'Live матч';
-                    
-                    return `
-                        <div class="match-card live">
-                            <div class="match-status">LIVE</div>
-                            <div class="match-tournament">
-                                <i class="fas fa-trophy"></i> ${tournament}
-                            </div>
-                            <div class="match-teams">
-                                <div class="team">
-                                    <span class="team-name">${team1}</span>
-                                    <span class="team-score">${score1}</span>
-                                </div>
-                                <span class="vs">VS</span>
-                                <div class="team">
-                                    <span class="team-name">${team2}</span>
-                                    <span class="team-score">${score2}</span>
-                                </div>
-                            </div>
-                            <div class="match-info">
-                                <span><i class="fas fa-circle" style="color: #ff4444;"></i> LIVE</span>
-                                <a href="https://www.hltv.org/matches" target="_blank" class="match-link">
-                                    Смотреть <i class="fas fa-arrow-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                }).join('');
-
-            } catch (error) {
-                console.error('Ошибка:', error);
-                container.innerHTML = `
-                    <div class="no-matches">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <h3>Ошибка загрузки</h3>
-                        <p>Не удалось получить данные. Попробуйте позже.</p>
+            container.innerHTML = realMatches.map(match => `
+                <div class="match-card">
+                    <div class="match-tournament"><i class="fas fa-trophy"></i> ${match.tournament}</div>
+                    <div class="match-teams">
+                        <div class="team"><span class="team-name">${match.team1}</span></div>
+                        <span class="vs">VS</span>
+                        <div class="team"><span class="team-name">${match.team2}</span></div>
                     </div>
-                `;
-            }
+                    <div class="match-info">
+                        <span><i class="far fa-clock"></i> ${match.time}</span>
+                        <a href="https://www.hltv.org/matches" target="_blank" class="match-link">Подробнее на HLTV <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        // Загружаем сразу
-        loadMatches();
+        function renderTournaments() {
+            const container = document.getElementById('tournamentsContainer');
+            container.innerHTML = tier1Tournaments.map(t => `
+                <div class="tournament-card">
+                    <div class="tournament-name">${t.name}</div>
+                    <div class="tournament-dates"><i class="far fa-calendar-alt"></i> ${t.dates}</div>
+                    <div class="tournament-prize"><i class="fas fa-dollar-sign"></i> ${t.prize} • ${t.location}</div>
+                    <a href="${t.link}" target="_blank" rel="noopener noreferrer" class="tournament-link">Подробнее на HLTV</a>
+                </div>
+            `).join('');
+        }
 
-        // Обновляем каждые 30 секунд
-        setInterval(loadMatches, 30000);
+        renderMatches();
+        renderTournaments();
     </script>
 </body>
 </html>
